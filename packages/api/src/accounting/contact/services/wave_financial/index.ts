@@ -2,11 +2,11 @@ import { EncryptionService } from '@@core/@core-services/encryption/encryption.s
 import { LoggerService } from '@@core/@core-services/logger/logger.service';
 import { PrismaService } from '@@core/@core-services/prisma/prisma.service';
 import { Injectable } from '@nestjs/common';
-import { ServiceRegistry } from '../registry.service';
+import { ServiceRegistry } from '../../../../@core/connections/accounting/services/registry.service';
 import { DesunifyReturnType } from '@@core/utils/types/desunify.input';
 import { OriginalContactOutput } from '@@core/utils/types/original/original.accounting';
 import { ApiResponse } from '@@core/utils/types';
-import { AccountingObject } from '../../../../../../../shared/src/standardObjects';
+import { AccountingObject } from '../../../../../../shared/src/standardObjects';
 import { AccountingObjectInput } from '@@core/utils/types/original/original.accounting';
 import { WaveFinancialContactOutput } from './types';
 
@@ -47,7 +47,7 @@ export class WaveFinancial implements IContactService {
     return <ApiResponse<WaveFinancialContactOutput[]>>;
   }
 
-  async handleCallBack(
+  async handleCallback(
 
   ): Promise<ApiResponse<WaveFinancialContactOutput>> {
     return <ApiResponse<WaveFinancialContactOutput>>;
