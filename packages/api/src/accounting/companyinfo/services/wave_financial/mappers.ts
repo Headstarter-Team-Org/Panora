@@ -12,7 +12,7 @@ export class WaveFinancialCompanyMapper implements ICompanyInfoMapper {
       slug: string;
       remote_id: string;
     }[],
-  ): WaveFinancialCompanyInput {
+  ): Promise<WaveFinancialCompanyInput> {
     return Promise.resolve({});
   }
 
