@@ -6,9 +6,14 @@ import { ServiceRegistry } from '../registry.service';
 import { AccountingObject } from '@accounting/@lib/@types';
 import { IAccountService } from '@accounting/account/types';
 import { SyncParam } from '@@core/utils/types/interface';
+import { ApiResponse } from '@@core/utils/types';
+import {
+  WaveFinancialAccountInput,
+  WaveFinancialAccountOutput
+} from "./types";
 
 @Injectable()
-export class WaveFinancialService implements IAccountService {
+export class WaveFinancialAccount implements IAccountService {
   constructor(
     private prisma: PrismaService,
     private logger: LoggerService,
@@ -16,19 +21,19 @@ export class WaveFinancialService implements IAccountService {
     private registry: ServiceRegistry,
   ) {
     this.logger.setContext(
-      AccountingObject.contact.toUpperCase() + ':' + WaveFinancialService.name,
+      AccountingObject.contact.toUpperCase() + ':' + WaveFinancialAccount.name,
     );
     this.registry.registerService('wave_financial', this);
   }
-  async addContact(
-    contactData:WaveFinancialAccountInput, 
+  async addAccount(
+    accountData:WaveFinancialAccountInput, 
     linkedUserId:string
-  ) {
-    //construct graphql query, getting account by id
+  ): Promise<ApiResponse<WaveFinancialAccountOutput>> {
+    
     return;
   }
 
-  async sync(data: SyncParam) {
+  async sync(data: SyncParam): Promise<ApiResponse<WaveFinancialAccountOutput[]>> {
     return;
   }
 }
