@@ -1,3 +1,6 @@
+export type CountryCode = string;
+export type CurrencyCode = string;
+
 export interface Province {
   slug?: string; // Marked as deprecated in the API
   code: string;
@@ -5,6 +8,7 @@ export interface Province {
 }
 
 export interface Country {
+  code: CountryCode;
   name: string;
   currency: Currency;
   nameWithArticle?: string; //Name of the country with the appropriate article, e.g. "the United States"
@@ -12,6 +16,7 @@ export interface Country {
 }
 
 export interface Currency {
+  code: CurrencyCode;
   symbol: string;
   name: string;
   plural?: string; //Plural version of currency name
@@ -20,7 +25,7 @@ export interface Currency {
 
 export interface WaveFinancialAddress {
   addressLine1: string;
-  addressLine2?: string;
+  addressLine2: string;
   city: string;
   province: Province;
   country: Country;

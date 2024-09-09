@@ -11,6 +11,9 @@ importers:
       '@changesets/cli':
         specifier: ^2.26.2
         version: 2.27.1
+      axios:
+        specifier: ^1.7.7
+        version: 1.7.7
       gitmoji-cli:
         specifier: ^9.0.0
         version: 9.2.0
@@ -7179,8 +7182,8 @@ packages:
       - debug
     dev: false
 
-  /axios@1.7.6:
-    resolution: {integrity: sha512-Ekur6XDwhnJ5RgOCaxFnXyqlPALI3rVeukZMwOdfghW7/wGz784BYKiQq+QD8NPcr91KRo30KfHOchyijwWw7g==}
+  /axios@1.7.7:
+    resolution: {integrity: sha512-S4kL7XrjgBmvdGut0sN3yJxqYzrDOnivkBiN0OFs6hLiUam3UPvswUo0kqGyhqUZGEOytHyumEdXsAkgCOUf3Q==}
     dependencies:
       follow-redirects: 1.15.6
       form-data: 4.0.0
@@ -13902,7 +13905,7 @@ packages:
     resolution: {integrity: sha512-hgyCYMyzMvuF3qWMw6JvS8gT55v7Mtp5wKWcnDrw+nu39D0Tk9BXD7I0LOBp0lGlHEPaXCEVYUtviNKrhMALGA==}
     engines: {node: '>=15.0.0'}
     dependencies:
-      axios: 1.7.6
+      axios: 1.7.7
       rusha: 0.8.14
     transitivePeerDependencies:
       - debug
