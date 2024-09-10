@@ -19,8 +19,7 @@
   "devDependencies": {
     "eslint": "^8.52.0",
     "husky": "^8.0.0",
-    "lint-staged": "^15.0.2",
-    "typegraphql-prisma": "^0.28.0"
+    "lint-staged": "^15.0.2"
   },
   "lint-staged": {
     "!website-docs/**/*.{ts,tsx,js}": [],
@@ -32,12 +31,9 @@
     "@changesets/cli": "^2.26.2",
     "axios": "^1.7.7",
     "gitmoji-cli": "^9.0.0",
-    "graphql": "^16.9.0",
-    "graphql-scalars": "^1.23.0",
     "optional": "^0.1.4",
     "sharp": "^0.33.2",
-    "turbo": "^1.10.16",
-    "type-graphql": "2.0.0-rc.2"
+    "turbo": "^1.10.16"
   },
   "private": true,
   "engines": {
