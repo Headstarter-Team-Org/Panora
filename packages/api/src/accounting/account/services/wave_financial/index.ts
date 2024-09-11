@@ -11,9 +11,11 @@ import {
   WaveFinancialAccountInput,
   WaveFinancialAccountOutput
 } from "./types";
+import axios from 'axios';
 
 @Injectable()
 export class WaveFinancialAccount implements IAccountService {
+  private API_URL: string = 'https://gql.waveapps.com/graphql/public'; // Wave Financial GraphQL API URL
   constructor(
     private prisma: PrismaService,
     private logger: LoggerService,
@@ -34,6 +36,18 @@ export class WaveFinancialAccount implements IAccountService {
   }
 
   async sync(data: SyncParam): Promise<ApiResponse<WaveFinancialAccountOutput[]>> {
+    try {
+      const {linkedUserId} = data;
+      const connection = this.prisma.connections.findFirst({
+        where: {
+          id_linked_user: linkedUserId,
+          provider_slug: 'wave_financial',
+          vertical: 'accounting',
+        },
+      });
+    } catch (e) {
+      throw new Error(e)
+    }
     return;
   }
 }
